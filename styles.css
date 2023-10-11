@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+}
+#back {
+  width: 100%;
+  height: 100vh;
+  /* background: red; */
+}
+#back img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 100%;
+}
+#top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  /* background: #999999d8; */
+}
+button {
+  pointer-events: all;
+}
+a {
+  pointer-events: all;
+}
+#workingArea {
+  position: relative;
+  width: 85%;
+  height: 96vh;
+  margin: 0 auto;
+  max-width: 1920px;
+}
+#nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+#nav img {
+  height: 80px;
+}
+#nleft,
+#nright {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+#nright {
+  gap: 10px;
+}
+
+#nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#hero {
+  position: absolute;
+  top: 32%;
+  left: 0;
+  transform: translate(0%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+}
+#heroleft {
+  min-width: 50%;
+  height: 100px;
+}
+#heroleft .elem {
+  height: 9vw;
+  overflow: hidden;
+}
+#heroleft .elem h1 {
+  line-height: 0.9;
+  font-family: "kajiro";
+  color: white;
+  font-weight: 100;
+  font-size: 10vw;
+}
+#heroleft button {
+  padding: 0.8vw 3vw;
+  font-size: 3vw;
+  margin-top: 0.5vw;
+  font-family: "kajiro";
+}
+#heroright {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: white;
+  width: 27%;
+}
+#heroright p {
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 11px;
+  font-family: 800;
+}
+
+#heroright img {
+  height: 120px;
+  width: 100%;
+  border: 4px solid white;
+  margin: 10px auto;
+}
+
+#heroright p:nth-child(3) {
+  margin-top: 30px;
+}
