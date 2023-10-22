@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us page</title>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: poppins;
+    }
+
+    #about-section {
+      width: 100%;
+      height: 94vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      padding: 40px 12%;
+      background-color: #f8f4f8;
+    }
+
+    .about-left img {
+      width: auto;
+      height: 450px;
+      border: solid 7px #82059b;
+    }
+
+    .about-right {
+      padding-top: 3%;
+      width: 64%;
+    }
+
+    .about-right ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    .about-right h1 {
+      color: #82059b;
+      font-size: 37px;
+      margin-bottom: 5px;
+    }
+
+    .about-right p {
+      color: #444;
+      line-height: 26px;
+      font-size: 15px;
+    }
+
+    .about-right .address {
+      margin: 25px 0;
+    }
+
+    .about-right .address ul li {
+      margin-bottom: 10px;
+    }
+
+    .address .address-logo {
+      margin-right: 15px;
+      color: #82059b;
+    }
+
+    .address .saprater {
+      margin: 0 15px;
+    }
+
+    .about-right .expertise ul {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .expertise {
+      display: none;
+    }
+
+    .expertise h3 {
+      margin-bottom: 10px;
+    }
+
+    .expertise .expertise-logo {
+      font-size: 19px;
+      margin-right: 10px;
+      color: #82059b;
+    }
+
+    @media only screen and (max-width: 600px) {
+      #about-section {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        justify-content: left;
+        padding-left: 0%;
+        width: 100vw;
+        align-items: self-start;
+        padding-left: 10%;
+        height: fit-content;
+      }
+
+
+
+      .about-left img {
+        margin: 50px 40px;
+      }
+
+      .about-right {
+        width: 70vw;
+      }
+
+
+      #about-right .address {
+        margin: 0;
+      }
+
+      .address .address-logo {
+        margin-right: 1;
+      }
+
+      .address .saprater {
+        display: none;
+      }
+
+      .about-right ul li {
+        display: flex;
+        align-items: center;
+      }
+
+      .about-right ul li span {
+        display: flex;
+        align-items: center;
+      }
+
+      .address .address-logo {
+        display: inline;
+        margin-right: 15px;
+      }
+
+      .box {
+        display: none;
+      }
+    }
+
+    :root {
+      --easing: cubic-bezier(0.33, 1, 0.68, 1);
+      --easing-2: cubic-bezier(0.61, 1, 0.88, 1);
+    }
+
+    input[type=checkbox]:checked+.box:after {
+      transform: translateY(-50%) scale3d(8, 6, 1);
+    }
+
+    input[type=checkbox]:checked+.box .box__item {
+      transform: translateX(0px);
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.5s ease-out;
+      transition-delay: calc(var(--index) * 0.1s);
+      transition-property: transform, opacity;
+    }
+
+    input[type=checkbox]:checked+.box .icon {
+      margin-right: 10px;
+      background: no-repeat center/50%;
+      background-image: url("./crossclose.png");
+    }
+
+    .box {
+      padding: 0px 80px;
+      position: absolute;
+      bottom: 140px;
+      right: 0;
+      z-index: 100;
+    }
+
+    .box h1 {
+      color: white;
+      margin-top: 0;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 1.802em;
+    }
+
+    .box p {
+      color: white;
+      font-size: 1.302em;
+    }
+
+    .box:after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      background: #73048d;
+      transform-origin: 100% 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s var(--easing);
+      z-index: -1;
+    }
+
+    .box__item {
+      visibility: hidden;
+      transform: translateX(20px);
+      opacity: 0;
+      transition: opacity 0.2s var(--easing-2) 0;
+    }
+
+    .toggle {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .toggle__checkbox {
+      display: none;
+    }
+
+    .icon {
+      cursor: pointer;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: no-repeat center/100%;
+      background-image: url("./clock.png");
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      background-color: #73048d;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="about-section">
+
+    <!-- about left  -->
+    <div class="about-left">
+      <img src="./about.jpg" alt="About Img" />
+    </div>
+
+    <!-- about right  -->
+    <div class="about-right">
+      <h4>A little bit</h4>
+      <h1>About Us</h1>
+      <p><a href="../index.html"><strong>Hardbit Computers</strong> </a>was started more than 2 decades ago, in 2002
+        with the motto of providing
+        amazing hardware components all over the city at affordable rates and top class quality. Since then, we've been
+        trying our best to achieve this goal, and make a goodwill in the market.
+      </p>
+      <div class="address">
+        <ul>
+          <li>
+            <span class="address-logo">
+              <i class="fas fa-location">
+              </i>
+            </span>
+            <span class="saprater"></span>
+            <p>G-7, Ahinsa Tower, 7 MG Road, Indore, MP</p>
+          </li>
+          <li>
+            <span class="address-logo">
+              <i class="far fa-envelope"></i>
+            </span>
+            <span class="saprater"></span>
+            <p>hardbit_computers@yahoo.com</p>
+          </li>
+          <li>
+            <span class="address-logo">
+              <i class="fas fa-phone-alt"></i>
+            </span>
+            <span class="saprater"></span>
+            <p>+91 94253 49633</p>
+          </li>
+          <li>
+            <span class="address-logo">
+              <i class="fas fa-message">
+              </i>
+            </span>
+            <span class="saprater"></span>
+            <p>+91 86022 80005</p>
+          </li>
+
+        </ul>
+      </div>
+      <div class="expertise">
+        <h3>What do you wanna buy ?</h3>
+        <ul>
+          <li>
+            <span class="expertise-logo">
+              <i class="fab fa-mouse"></i>
+            </span>
+            <p>HTML</p>
+          </li>
+          <li>
+            <span class="expertise-logo">
+              <i class="fab fa-css3-alt"></i>
+            </span>
+            <p>CSS</p>
+          </li>
+          <li>
+            <span class="expertise-logo">
+              <i class="fab fa-node-js"></i>
+            </span>
+            <p>Java Script</p>
+          </li>
+          <li>
+            <span class="expertise-logo">
+              <i class="fab fa-react"></i>
+            </span>
+            <p>React Js</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <input type="checkbox" id="toggle" class="toggle__checkbox" />
+
+    <aside class="box">
+      <label for="toggle" class="toggle"><i class="icon"></i></label>
+
+      <section>
+        <h1 style="--index:1;" class="box__item">Opening times</h1>
+        <p style="--index:3;" class="box__item">Mon-Sat : 11AM - 8PM</p>
+        <p style="--index:4;" class="box__item">Sundays Off</p>
+        <!-- <p style="--index:5;" class="box__item">Wed : 9AM - 11AM</p> -->
+      </section>
+    </aside>
+
+  </section>
+  <footer>A &nbsp; <b>Pranay Parikh</b>&nbsp; Product</footer>
+</body>
+
+</html>
